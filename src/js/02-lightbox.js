@@ -21,27 +21,8 @@ const creatItem = (galleryItems) => {
 
 imgConteiner.insertAdjacentHTML('beforeend', creatItem(galleryItems));
 
-imgConteiner.addEventListener('click', openImg);
-var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-function openImg(e){
-    e.preventDefault();
-    const galleryImg = e.target.classList.contains('gallery__image');
-    if(!galleryImg){
-        return
-    }
-    const eventImg = e.target.dataset.source;
+const lightbox = new SimpleLightbox('.gallery a',{
+    captions:true,
+    captionDelay:250,
+    captionsData:'alt'});
 
-    
-    imgConteiner.addEventListener('keydown', escapeFunction);
-    function escapeFunction(e){
-        if(e.code !== 'Escape'){
-            return;
-        }
-       
-           
-        
-    
-        
-        console.log(e.code)
-    }
-}
