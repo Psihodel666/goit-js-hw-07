@@ -43,12 +43,7 @@ function openImg(e){
         if(e.code !== 'Escape'){
             return;
         }
-       
-           
-        basicLightbox.visible(false)
-    
-        
-        console.log(e.code)
+        const elem = instance.close()  
     }
 }
 
